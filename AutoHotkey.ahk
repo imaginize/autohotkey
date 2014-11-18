@@ -1,3 +1,5 @@
+;MKLINK Autohotkey.ahk C:\Users\Imaginize\Documents\Projects\autohotkey\Autohotkey.ahk
+
 NumpadEnter::LButton
 `::Click 2
 

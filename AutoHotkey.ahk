@@ -1,7 +1,7 @@
 ;MKLINK Autohotkey.ahk C:\Users\Imaginize\Documents\Projects\autohotkey\Autohotkey.ahk
 
 NumpadEnter::LButton
-`::Click 2
+;`::Click 2
 
 AppsKey::^x
 RShift::^c
@@ -15,7 +15,7 @@ if WinActive("ahk_class TaskSwitcherWnd")
 }
 else
 {
-	Run, "C:\Users\Imaginize\Documents\switch"
+	Run, "C:\Window Switcher"
 }
 
 ;Del::LButton
@@ -79,4 +79,25 @@ if WinActive("ahk_class Chrome_WidgetWin_1")
 Send ^{Tab}
 else if WinActive("ahk_class PX_WINDOW_CLASS")
 Send ^{PgDn}
+return
+
+`::
+IfWinActive ahk_class Chrome_WidgetWin_1
+{
+WinGet, chrome_id, ID, A
+WinHide
+WinActivate ahk_class Chrome_WidgetWin_1
+}
+else
+{
+Send {`}
+}
+return
+
++`::
+IfWinActive ahk_class Chrome_WidgetWin_1
+{
+WinShow, ahk_id %chrome_id%
+WinActivate ahk_class Chrome_WidgetWin_1
+}
 return

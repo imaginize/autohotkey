@@ -67,14 +67,14 @@ else if WinActive("ahk_class Chrome_WidgetWin_1")
 }
 
 ;chrome & sublime
-f2::
+RALt::
 if WinActive("ahk_class Chrome_WidgetWin_1")
 Send ^+{Tab}
 else if WinActive("ahk_class PX_WINDOW_CLASS")
 Send ^{PgUp}
 return
 
-f3::
+RControl::
 if WinActive("ahk_class Chrome_WidgetWin_1")
 Send ^{Tab}
 else if WinActive("ahk_class PX_WINDOW_CLASS")
@@ -94,7 +94,7 @@ Send {`}
 }
 return
 
-+`::
+^`::
 IfWinActive ahk_class Chrome_WidgetWin_1
 {
 WinShow, ahk_id %chrome_id%

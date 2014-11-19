@@ -8,6 +8,7 @@ RShift::^c
 Pause::^v
 NumpadSub::^z
 
+;WINDOW SWITCHER
 RWin::
 if WinActive("ahk_class TaskSwitcherWnd")
 {
@@ -17,19 +18,29 @@ else
 {
 	Run, "C:\Window Switcher"
 }
+if WinActive("ahk_class TaskSwitcherWnd")
+{
+	5::left
+	6::right
+}
 
 ;Del::LButton
 
 ~^r::Reload
 
 ~^1::
-If WinActive("ahk_class ThunderRT6FormDC") || WinActive("ahk_class MAME") || WinActive("ahk_class KegaClass") || WinActive("ahk_class Project64 2.0") || WinActive("ahk_class JnesWindow") || WinActive("ahk_class wxWindowNR")
+If WinActive("ahk_class PX_WINDOW_CLASS") || WinActive("ahk_class Chrome_WidgetWin_1")
+{
+	return
+}
+else If WinActive("ahk_class ThunderRT6FormDC") || WinActive("ahk_class MAME") || WinActive("ahk_class Project64 2.0") || WinActive("ahk_class JnesWindow") || WinActive("ahk_class wxWindowNR")
 {	
 	WinClose
 	return
 }
-else If WinActive("ahk_class PX_WINDOW_CLASS") || WinActive("ahk_class Chrome_WidgetWin_1")
+else If WinActive("ahk_class KegaClass")
 {
+	Send {Esc}
 	return
 }
 else IfWinNotExist

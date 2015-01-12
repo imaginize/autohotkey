@@ -18,11 +18,6 @@ else
 {
 	Run, "C:\Window Switcher"
 }
-if WinActive("ahk_class TaskSwitcherWnd")
-{
-	5::left
-	6::right
-}
 
 ;Del::LButton
 
@@ -66,7 +61,7 @@ if WinActive("ahk_class PX_WINDOW_CLASS")
 		WinActivate
 		Send ^1
 		Sleep, 500
-		Send {F5}
+		;Send {F5}
 		return
 	}
     return
@@ -85,7 +80,7 @@ else if WinActive("ahk_class PX_WINDOW_CLASS")
 Send ^{PgUp}
 return
 
-RControl::
+f9::
 if WinActive("ahk_class Chrome_WidgetWin_1")
 Send ^{Tab}
 else if WinActive("ahk_class PX_WINDOW_CLASS")
